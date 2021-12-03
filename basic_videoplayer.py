@@ -1,4 +1,6 @@
 # Imbeds a video file within a Tkinter window
+# tkVideo was made by Xenofon Konitsas - @huskeeeeee - konitsasx@gmail.com
+# tkVideo can be found here https://github.com/huskeee/tkvideo
 from tkinter import *
 from tkvideo import tkvideo
 
