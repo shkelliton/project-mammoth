@@ -9,15 +9,21 @@ root = Tk()
 
 pygame.mixer.init()
 
+soundNarra = pygame.mixer.Sound("Sound\\coralbackgrnd.mp3")
+soundNarra.set_volume(0.5)
+
 def callback(root):
-    player = tkvideo("C:\\Users\\Matthew\\Documents\\Github\\project-mammoth\\Model\\polarbear_videoB0001-0080.mp4", my_label, loop = 0, size = (1920,1080))
+    player = tkvideo("Model\\polarbear_videoB0001-0080.mp4", my_label, loop = 1, size = (1920,1080))
     player.play()
     pygame.mixer.music.set_volume(0.1)
-    pygame.mixer.music.load("C:\\Users\\Matthew\\Documents\\Github\\project-mammoth\\Sound\\coralbackgrnd.mp3")
+    pygame.mixer.music.load("Sound\\coralbackgrnd.mp3")
     pygame.mixer.music.play(loops=0)
 
+def narration(root):
+    pygame.mixer.Sound.play(soundNarra)
 
 root.bind('<Return>', callback)
+root.bind('c', narration)
 
 my_label = Label(root)
 my_label.pack()
